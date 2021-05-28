@@ -119,8 +119,9 @@
               <avue-rate disabled
                          v-model="row[column.prop]" />
             </span>
-            <span v-else
+            <span v-else-if="['html'].includes(column.type)"
                   v-html="handleDetail(row,column)"></span>
+            <span v-else >{{ handleDetail(row,column) }}</span>
           </template>
         </template>
       </el-table-column>
