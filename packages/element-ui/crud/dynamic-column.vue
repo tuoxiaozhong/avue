@@ -81,8 +81,9 @@
                 <avue-rate disabled
                            v-model="scope.row[column.prop]" />
               </span>
-              <span v-else
+              <span v-else-if="['html'].includes(column.type)"
                     v-html="handleDetail(scope.row,column,crud.DIC[column.prop])">1</span>
+              <span v-else>{{ handleDetail(scope.row,column,crud.DIC[column.prop]) }}</span>
             </template>
           </span>
         </el-table-column>
